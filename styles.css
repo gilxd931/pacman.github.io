@@ -1,0 +1,505 @@
+/*-----------------------------------------*/
+/* General */
+/*-----------------------------------------*/
+
+* {
+    font-family: sans-serif;
+}
+canvas {
+    border: 1px solid black; 
+}
+
+/*-----------------------------------------*/
+/* Headings */
+/*-----------------------------------------*/
+h2{
+    font-size: 16px;
+    font-weight: 1000;
+    margin-bottom: 15px;
+}
+
+h3 {
+    text-transform: uppercase;
+    font-size: 10px;
+    font-weight: 1000;
+    margin-bottom: 15px;
+}
+
+.main_text {
+    
+    color: rgb(45, 35, 36);
+    float: left;
+}
+.score{
+    clear: both;
+}
+
+.input_text {
+    float: left;
+    margin-top: 5px;
+    margin-right: 20px;
+    padding-left: 5px;
+    height: 22px;
+}
+
+.logo {
+    height: 80px;
+    width: auto;
+    float: left;
+}
+
+.main-nav {
+    float: left;
+    list-style: none;
+    margin-bottom: 50px;
+    width: 98.8%;
+    height: 30px;
+    margin-top: 0;
+    padding-top: 10px;
+    margin-left: -8px;
+    background-color: #686868;
+
+}
+
+.main-nav li {
+    display: inline-block;
+    font-size: 18px;
+    color: white;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 3px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 7px solid transparent;
+    transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 7px solid rgba(230, 126, 34, 0.8);
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 3px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    font-size: 90%;
+    border-bottom: 7px solid transparent;
+    transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 7px solid rgba(230, 126, 34, 0.8);
+}
+
+li:not(:last-child) {
+    margin-right: 50px;
+}
+
+input {
+    border: none;
+    font-size: 14px;
+        width: 80px;
+    height: 10px;
+}
+
+#game_page {
+    height: 1000px;
+    display: none;
+    margin-top: -100px;
+}
+
+canvas {
+    border: 1px solid rgba(230, 126, 34,1);
+}
+
+a:hover,
+a:active {
+    color: #e67e22;
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #e67e22;
+    transition: border-bottom 0.2s, color 0.2s;
+    cursor: pointer;
+}
+
+.btn:link,
+.btn:visited,
+input[type=submit]{
+    display: inline-block;
+    padding: 13px 32px;
+    font-weight: 300;
+    text-decoration: none;
+    border-radius: 200px;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+.btn-full:link,
+.btn-full:visited,
+input[type=submit]{
+    background-color: #e67e22;
+    border: 1px solid #e67e22;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+    border: 1px solid #e67e22;
+    color: #e67e22;
+}
+
+.btn:hover,
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active
+{
+    background-color: #cf6d17;
+}
+
+.btn-full:hover,
+.btn-full:active{
+    background-color: #cf6d17;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+    border: 1px solid #cf6d17;
+    color: #fff;
+}
+
+/*-----------------------------------------*/
+/* FORM */
+/*-----------------------------------------*/
+
+form {
+    border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+input[type=number], select , input[type=range] {    
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type=range]{
+    width: 42%;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: #e67e22;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #686868;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+    width: 30%;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+@media screen and (max-width: 300px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+    .cancelbtn {
+        width: 100%;
+    }
+}
+
+
+/*-----------------------------------------*/
+/* FOOTER */
+/*-----------------------------------------*/
+
+footer {
+  right: 0;
+  left:0;
+  bottom: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+  position: fixed;
+  width: 99%;
+  margin-left: -8px;
+}
+
+content {
+    position: absolute;
+}
+
+.header {
+    float: left;
+    background-color: rgba(230, 126, 34, 0.8);
+    width: 101%;
+    margin-top: -8px;
+    margin-left: -8px;
+    height: 82px;
+}
+
+
+.main_menu {
+    float: left;
+    clear: both;
+    margin-bottom: 30px;
+    margin-top: 30px;
+
+}
+
+#welcome_page {
+    clear: both;
+    display: none;
+    padding-left: 38%;
+    margin-top: -30px;
+}
+
+
+
+.content {
+    clear: both;
+    padding: 100px;
+}
+
+.canvasDiv {
+}
+
+#lblUser {
+    clear: both;
+    width: 400px;
+    height: 22px;
+    margin-top: -5px;
+
+}
+
+.user_name_game {
+    float: left;
+    margin-left: 15%;
+    height: 32px;
+}
+
+#dob_id {
+    width: auto;
+}
+
+.students {
+    float: right;
+    padding-right: 20px;
+    padding-top: 10px;
+    text-align: center;
+    color: #e0e0e0;
+}
+
+.pacman_header_title {
+    margin-left: 28%;
+    font-size: 60px;
+    float: left;
+    padding-top: 20px;
+    color: white;
+    text-transform: uppercase;
+
+}
+
+.menuButton {
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #303030;
+}
+
+
+
+.pacmanLogo {
+    height: 80px;
+    width: auto;
+    margin-left: 28%;
+}
+
+#signUp_page {
+    display: none;
+}
+
+#login_page {
+    display: none;
+    margin-top: -80px;
+}
+
+
+
+.welcome_text {
+    font-size: 25px;
+    font-weight: 1000;
+    margin-bottom: 15px;
+}
+
+
+
+
+
+.game_params {
+    float: left;
+}
+
+.gameBoard {
+    clear: both;
+    text-align: center;
+}
+
+.game_input_params {
+    margin-left: 15%; 
+}
+
+.start_newGame_button {
+    clear: both;
+    text-align: center;
+    font-size: 12px;
+    padding-right: 100px;
+}
+
+#menuLogout {
+    display: none;
+}
+
+.menuLogoutButton {
+    font-size: 20px;
+    color: #303030;
+    float: right;
+    margin-right: 40px;
+}
+
+#settings_page {
+    display: none;
+    height: 650px;
+    margin-top: -80px;
+}
+
+.dob {
+    width: 180px;
+}
+
+#datePicker {
+    width: 180px;
+    border: groove ;
+    margin-top: 10px;
+}
+
+#settingForNewGameForm {
+    text-align: center;
+    margin-top: -30px;
+}
+
+.titleForSettings {
+    height=130px;
+}
+
+
+
+#settingsTitle {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+
+.copyright {
+    flex: left;
+    width: 25%;
+    margin-left: 37.5%;
+    
+}
+
+
+#canvas {
+    float: left;
+    margin-left: 15%;
+    margin-top: -10px;
+}
+
+.foodMenu {
+    float: right;
+    height: 120px;
+    margin-right: 13%;
+}
+
+.foodColorMenu {
+    height: 150px;
+}
+
+.welcomeImage {
+    width: 150px;
+    margin-top: -60px;
+}
+
+#signUpForm {
+    margin-top: -80px;
+}
+
+
+
+.footMenuImg {
+        height: 100px;
+    width: auto;
+    margin-left: 20%;
+}
+
+
+
+#numOfMon {
+    height: 39px;
+    text-align-last: center;
+}
+
+
+
+
+
+.settingsParams {
+}

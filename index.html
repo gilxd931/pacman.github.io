@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Pacman Game HTML5 document. -->
+<html>
+   <head>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <meta charset = "utf-8">
+        <title>Pacman Game</title>
+       
+   </head> 
+    
+    <body>
+        <!------------- Header -------------> 
+        <div class="header">
+            <img src="images/G-S_logo.png" alt="Gil-Sapir logo" class="logo">
+            <img src="images/pacmanLogo2.png" alt="Pacman Game" class="pacmanLogo">
+            <h2 class="students">Sapir shkedi<br>Gil rotem</h2>
+        </div>
+        
+        <!------------- Menu -------------> 
+        <div id="menu" >
+            <ul  class="main-nav">
+                <li class="menuButton" id="menuWelcome" ><a>Welcome</a></li>
+                <li class="menuButton" id="menuSignup" ><a>Sign up</a></li>
+                <li class="menuButton" id="menuLogin" ><a>Login</a></li>
+                <li class="menuButton" id="menuAbout"><a>About</a></li>
+                <li class=" menuLogoutButton" id="menuLogout" ><a>Log Out</a></li>
+
+            </ul>
+        </div>
+        
+        <section class="content">
+            <!-- Welcome page -->
+            <div class ="content_component" id= "welcome_page" >
+            <img src="images/PacManWelcome.png"  alt="welcome" class="welcomeImage" >
+                <div class="welcome_text">
+                    Welcome to Pacman!<br>Come on, Lets get started!
+                </div>
+                <a id= "signupButton" class="btn btn-ghost" href="#">Sign up</a>
+                <a id = "loginButton" class="btn btn-ghost" href="#">Login</a>
+            </div>
+
+            <!-- SignUp page -->
+            <div class ="content_component" id= "signUp_page">
+                <form action="mailto: gilr@post.bgu.ac.il" id="signUpForm">
+                    <div class="container">
+                        
+                        <label><b>First Name</b></label>
+                        <input type="text" placeholder="First Name" name="fName" id="firstNameSignUp">
+                        
+                        <label><b>Last Name</b></label>
+                        <input type="text" placeholder="Last Name" name="lName" >
+                        
+                        <label><b>Email</b></label>
+                        <input type="text" placeholder="Enter Email" name="email">
+                        
+                        <label><b>User Name</b></label>
+                        <input type="text" placeholder="User Name" name="uName" id="uName">
+                        
+                        <label><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" id="password" name="psw" >
+   
+                        <label><b>Date of birth</b></label>
+                        <input  id="datePicker" type="date" min="1900-01-01"  placeholder="Date of birth">
+
+                        <div class="clearfix">
+                          <button type="button"  class="cancelbtn">Cancel</button>
+                          <button type="submit" class="signupbtn">Sign Up</button>
+                    </div>
+                  </div>
+                </form>
+                
+            </div>
+
+            <!-- Login page -->
+            <div class ="content_component" id= "login_page">
+                <form id="loginForm" action="JavaScript:ConnectUser()">
+                  <div class="imgcontainer">
+                  </div>
+
+                  <div class="container">
+                    <label><b>Username</b></label>
+                    <input type="text" id="loginUserName" placeholder="Enter Username" name="uname" required>
+
+                    <label><b>Password</b></label>
+                    <input type="password" id="loginPassword" placeholder="Enter Password">
+
+                    <button type="submit">Login</button>
+                  </div>
+
+                  <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" class="cancelbtn">Cancel</button>
+                  </div>
+                </form>
+            </div>
+            
+            <!-- Game page -->
+            <div id="game_page">
+                    <div class="user_name_game" id="user_name_game_id">
+                        <h3>user name:</h3>
+                    </div>
+
+                    <div class="input_text">
+                        <input id="lblUser" >
+                    </div>
+                
+                    <div class="game_input_params">
+                        <div class="main_text score">
+                            <h3>Score:</h3>
+                        </div>
+
+                        <div class="input_text">
+                            <input id="lblScore" >
+                        </div>
+
+                        <div class="main_text">
+                            <h3>Time:</h3>
+                        </div>
+
+                        <div class="input_text">
+                            <input id="lblTime" />
+                        </div>
+                        
+                        <div class="main_text">
+                            <h3>lives:</h3>
+                        </div>
+
+                        <div class="input_text">
+                            <input id="lblLife" />
+                        </div>
+                    </div> 
+                                           
+                    <div class="gameBoard">
+                        <canvas id="canvas" height="453" width="700"></canvas>
+                        <div class= "foodMenu">
+                            <img src="images/foodColorMenu.JPG" alt="Pacman Game" class="footMenuImg" >
+                        </div>
+                    </div>
+
+                    <div class="start_newGame_button"> 
+                         <a class="btn btn-ghost" onclick="RestartGame()" href="#">New Game</a>
+                    </div>
+             </div>
+        <!------------- Settings ------------->
+            
+            <div class ="content_component" id="settings_page"> 
+                <div class="welcome_text" id="settingsTitle" style="font-size: 19px;" >
+                     Choose game settings:
+                </div>
+            <form oninput="x.value=parseInt(numOfFood.value)" id="settingForNewGameForm" action="JavaScript:()">
+                <div class="container">
+                    <label><b>Amount Of Monsters:</b></label><br>
+                    <select name="numOfMon" id="numOfMon">
+                        <option value="1" selected>1</option>
+                        <option value="2">2</option>
+                        <option value="3" >3</option>
+                    </select>                 
+                    <br><br>
+                    <label><b>Amount Of Food:</b></label> <output name="x" for="numOfFood" ></output>
+                    <br>
+                    <label style="font-size:36px"><b>50</b></label>
+                    <input type="range" id="numOfFood" name="numOfFood" value="70" min="50" max="90">
+                    <label style="font-size:36px"><b>90</b></label>
+                    <br><br>
+                    <label><b>Max Game Time (Seconds):</b></label><br>
+                    <input type="number" name="timeForGame" id="timeForGame" min="60" value="60" pattern="[0-9]+" >
+                    <div> 
+                        <button class="btn btn-ghost" href="#" type="submit">Start!</button>
+                    </div>
+              </div>
+            </form>
+        </div>
+    </section>
+        
+        <!------------- About -------------> 
+        <dialog id="about">
+            Welcome to Gil and Sapir pacman game! <br><br> we used jQuery validation plugin. <br> we didnt use any template to build this site. <br> main difficulty: we didnt know that in "form" <br>tag there has to be an "action" and wasted <br> many hours untill we understood the wierd <br> behavior without it.
+            <br>
+            <button>Close dialog</button>
+        </dialog>
+
+        <footer>
+            <div class= "copyright">
+                <b>Copyright &copy; gil & sapir</b>
+            </div>
+            <div class= "contact">
+                 Contact Us: shkedisa@post.bgu.ac.il  OR  gilr@post.bgu.ac.il
+            </div>
+
+        </footer> 
+        
+        <script src="jquery/jquery-2.1.3.min.js"></script>
+        <script src="jquery/jquery.validate.min.js"></script>  
+        <script src="jquery/additional-methods.min.js"></script>
+        <script src="jquery/signup-form.js"></script>
+        <script src="game.js"></script>
+        <script src="mainFunctions.js"></script>
+        
+    </body>
+</html>
